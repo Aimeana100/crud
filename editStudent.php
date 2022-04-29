@@ -51,10 +51,9 @@ if (isset($_GET['id_to_edit'])) {
 <body>
     <div class="navigation"> <a href="allStudent.php"> View all Students </a> </div>
     <h1 style="text-align: center"> Edit Student </h1>
+    <h1 style="text-align: center"> Link : www.github.com/Aimeana/crud </h1>
 
     <div class="form-container">
-
-
 
         <form action="server/update.php" method="POST" name="myform" class="myform">
         <input type="hidden" name="id_to_edit" value="<?php echo $$var_id ?>">

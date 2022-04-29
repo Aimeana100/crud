@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+     h1{
+color: blue;
+}
+/* 
+display - flex
+ */
+ .container{
+  background-color: azure;
+  height: 350px;
+  border: 1px rgb(121, 201, 170) solid ;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   /* align-content: center; */
+   /* flex-wrap: wrap; */
+ }
+
+.container .item{
+  background-color: rgb(62, 94, 163);
+  min-width: 200px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* flex Navigation  */
+nav{
+  background-color: rgb(62, 94, 163);
+
+}
+.menu{
+  height: 50px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul{
+  display:  flex;
+}
+
+ul li{
+  list-style: none;
+}
+
+ul li a{
+  color: white;
+  text-decoration: none;
+  padding: 10px 10px;
+  font-size: 20px;
+}
+
+
+ul li a:hover{
+  background-color: white;
+  color: rgb(62, 94, 163);
+}
+
+.logo-container{
+  max-height: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+
+    .container{
+        flex-direction: column;
+
+ }
+
+ .container .item{
+     height: 200px;
+     width: 100%;
+ }
+
+ .menu{
+  height : fit-content;
+  flex-direction:column;
+
+
+}
+
+
+}
+
+@media only screen and (max-width: 400px) {
+    .menu ul {
+        flex-direction:column;
+    }
+}
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+  <nav>
+    <div class="menu">
+        <div class="logo-container">
+            <img src="images.png" height="40"  alt="">
+        </div>
+        <ul>
+            <li> <a href="#" > Home </a> </li>
+            <li> <a href="#" > About  </a> </li>
+            <li> <a href="#" > services  </a> </li>
+            <li> <a href="#" > Contact us  </a> </li>
+        </ul>
+    </div>
+</nav>
+
+
+<h1> Flex - box </h1>
+
+  <div class="container">
+      <div class="item item1">item1 </div>
+      <div class="item item2">item2 </div>
+      <div class="item item3">item3 </div>
+  </div>
+
+
+</body>
+</html>
