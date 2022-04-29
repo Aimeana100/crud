@@ -13,10 +13,12 @@ if ($conn->connect_error) {
 
 // 
 ?>
-<div class="navigation"> <a href="addStudent.php"> Back </a> </div>
+<div class="navigation">
+    <a href="addStudent.php"> Back </a>
+</div>
 
-<table border="1">
-
+<table style="border-collapse: separate;border-spacing: 2px;
+">
     <tr>
         <th>ID</th>
         <th> First Name </th>
@@ -26,18 +28,18 @@ if ($conn->connect_error) {
         <th> Status </th>
         <th colspan="2"> Action</th>
     </tr>
-
     <?php
 
-    $sql = "SELECT * FROM student";
+    // $sql = "SELECT * FROM student";
 
-    $result = $conn->query($sql);
+    $result = $conn->query("SELECT * FROM student");
 
-    while($row = $result->fetch_assoc())
-    {
+    echo "number of rows:" . $result->num_rows;
 
-            echo
-    " <tr> 
+    while ($row = $result->fetch_assoc()) {
+
+        echo
+        " <tr> 
 
         <td>" . $row['id'] . "</td>
         <td>" . $row['fname'] . "</td>
@@ -46,13 +48,12 @@ if ($conn->connect_error) {
         <td>" . $row['dob'] . "</td>
         <td>" . $row['status'] . "</td>
 
-        <td> <a href='editStudent.php'> Edit </a> </td>
-        <td> <a href=''> Delete </a> </td>
-          </tr>";
+        <td><a href='editStudent.php?id_to_edit=" . $row['id'] . "&name=" . $row['fname'] . " '> Edit </a> </td>
+        <td> <a href=''> Delete </a></td>
+        </tr>";
     }
+
+
+
     ?>
-
-
-
 </table>
-
