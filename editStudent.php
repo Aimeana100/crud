@@ -57,7 +57,7 @@ if (isset($_GET['id_to_edit'])) {
 
 
         <form action="server/update.php" method="POST" name="myform" class="myform">
-
+        <input type="hidden" name="id_to_edit" value="<?php echo $$var_id ?>">
             <div class="form-control">
                 <label for="last_name"> Fname </label>
                 <input type="text" id="last_name" name="fname" value="<?php echo $fname ?>">
